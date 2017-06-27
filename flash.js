@@ -1,4 +1,4 @@
-'use strick';
+'use strict';
 var BasicCard = require('./BasicCard');
 var ClozeCard = require('./ClozeCard');
 
