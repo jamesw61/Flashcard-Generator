@@ -1,8 +1,13 @@
 'use strict';
 var fs = require('fs');
 var BasicCard = function(front, back) {
-    this.front = front;
-    this.back = back;
+    if (this instanceof BasicCard) {
+        this.front = front;
+        this.back = back;
+    }
+    else {
+    	return new BasicCard(front, back);
+    }
 }
 
 BasicCard.prototype.saveCardToFile = function() {
@@ -14,7 +19,6 @@ BasicCard.prototype.saveCardToFile = function() {
             if (err) throw err;
         });
     });
-
 }
 
 module.exports = BasicCard;

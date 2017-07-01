@@ -1,9 +1,14 @@
 'use strict';
 var fs = require('fs');
 var ClozeCard = function(text, cloze){
+	if (this instanceof ClozeCard){ 
 	this.fullText = text;
 	this.cloze = cloze;
 	this.partial = text.replace(cloze, '....');
+	}
+	else {
+		return new ClozeCard(text, cloze);
+	}
 }
 
 // ClozeCard.prototype.partial = function() {
